@@ -1,0 +1,27 @@
+
+engine/core/object
+├── component
+│   ├── behaviour
+│   │   └── behaviour.cpp
+│   ├── collider
+│   │   └── collider.cpp
+│   ├── component.cpp
+│   ├── controller
+│   │   └── controller.cpp
+│   ├── renderer
+│   │   └── renderer.cpp
+│   ├── rigidbody
+│   │   └── rigidbody.cpp
+│   └── transform
+│       └── transform.cpp
+├── gameobject
+│   └── gameobject.cpp
+├── material
+│   └── material.cpp
+├── mesh
+│   └── mesh.cpp
+├── object.cpp
+├── sprite.cpp
+└── texture.cpp
+
+11 directories, 13 files

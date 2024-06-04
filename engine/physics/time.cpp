@@ -1,0 +1,9 @@
+
+
+namespace Core
+{
+class time {};
+}
+
+
+

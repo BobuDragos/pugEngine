@@ -1,0 +1,11 @@
+
+
+
+namespace Core
+{
+class fileManager{};
+}
+
+
+
+

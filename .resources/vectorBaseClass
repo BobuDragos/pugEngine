@@ -1,0 +1,29 @@
+// class Vector {
+// protected:
+//   double* components; // Dynamic array to store components
+//   int size; // Size of the vector
+//     
+// public:
+//   // Constructor for initializing vector with specified size
+//   Vector(int _size) : size(_size) {
+//       components = new double[size];
+//       for (int i = 0; i < size; ++i) {
+//           components[i] = 0.0;
+//       }
+//   }
+
+//   // Destructor to free memory
+//   virtual ~Vector() {
+//       delete[] components;
+//   }
+
+//   // Accessor to get component value by index
+//   double& operator[](int index) {
+//       if (index < 0 || index >= size) {
+//           std::cerr << "Index out of range" << std::endl;
+//           exit(1);
+//       }
+//       return components[index];
+//   }
+// };
+

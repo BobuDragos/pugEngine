@@ -1,0 +1,80 @@
+\doxysection{graphics.\+cpp}
+\hypertarget{graphics_8cpp_source}{}\label{graphics_8cpp_source}\index{/home/admin/git/pugEngine/engine/core/graphics/graphics.cpp@{/home/admin/git/pugEngine/engine/core/graphics/graphics.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <GL/freeglut\_std.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <GL/freeglut.h>}}
+\DoxyCodeLine{00003\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ prevKey;}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }Core}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCore_1_1drawEngine}{drawEngine}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00010\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ display(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ \textcolor{comment}{//\ printf("{}DisplayFunction:\ \(\backslash\)n"{});}}
+\DoxyCodeLine{00013\ \ \ \textcolor{comment}{//\ loop();}}
+\DoxyCodeLine{00014\ \ \ glutSwapBuffers();}
+\DoxyCodeLine{00015\ \ \ glFlush();}
+\DoxyCodeLine{00016\ \ \ glutPostRedisplay();}
+\DoxyCodeLine{00017\ \}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ reshape(\textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h)}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \textcolor{comment}{//\ printf("{}ReshapeFunction\ \(\backslash\)n"{});}}
+\DoxyCodeLine{00022\ \ \ }
+\DoxyCodeLine{00023\ \ \ glViewport(0,0,(GLsizei)\ w,\ (GLsizei)\ h);}
+\DoxyCodeLine{00024\ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ keyboard(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ key,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \textcolor{comment}{//\ printf("{}keyboard\ event\ \(\backslash\)n"{});}}
+\DoxyCodeLine{00029\ \ \ \textcolor{comment}{//\ printf("{}key\ pressed:\ \%c\ \(\backslash\)n"{},\ key);}}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordflow}{if}\ (key\ ==\ 27)}
+\DoxyCodeLine{00031\ \ \ \ \ exit(0);}
+\DoxyCodeLine{00032\ \ \ \textcolor{comment}{//\ printf("{}mouse\ pos:\ x\%d\ y\%d\ \(\backslash\)n"{},\ x,\ y);}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{comment}{//\ keyPressed(key,\ x,\ y);}}
+\DoxyCodeLine{00035\ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ mouse(\textcolor{keywordtype}{int}\ button,\ \textcolor{keywordtype}{int}\ state,\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \textcolor{comment}{//\ printf("{}mouse\ \%d\ \(\backslash\)n"{},\ state);}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{comment}{//\ if(state\ ==\ 0)}}
+\DoxyCodeLine{00042\ \ \ \textcolor{comment}{//\ \ \ keyPressed(button\ +\ '0',\ x,\ y);}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{comment}{//\ if\ (state\ ==\ 1)}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ keyReleased(button\ +\ '0',\ x,\ y);}}
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ glutSetup(\textcolor{keywordtype}{int}\ *argc,\ \textcolor{keywordtype}{char}**\ argv)}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ glutInit(argc,\ argv);}
+\DoxyCodeLine{00051\ \ \ glutInitWindowSize(480,\ 480);\ \textcolor{comment}{//\ 480x640}}
+\DoxyCodeLine{00052\ \ \ glutInitWindowPosition(0,0);}
+\DoxyCodeLine{00053\ \ \ glutInitDisplayMode(GLUT\_DOUBLE\ |\ GLUT\_RGBA);}
+\DoxyCodeLine{00054\ \ \ glutCreateWindow(\textcolor{stringliteral}{"{}Canvas"{}});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ glutReshapeFunc(reshape);}
+\DoxyCodeLine{00057\ \ \ glutDisplayFunc(display);}
+\DoxyCodeLine{00058\ \ \ glutKeyboardFunc(keyboard);}
+\DoxyCodeLine{00059\ \ \ glutMouseFunc(mouse);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ user's\ code\ here\ somehow}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{comment}{//\ smth\ like;}}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ main::setup();}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ glutMainLoop();}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+
+\end{DoxyCode}
