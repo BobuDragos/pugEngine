@@ -1,7 +1,7 @@
 
 #include "physics/physics.cpp"
 #include "core/core.cpp"
-
+using namespace core;
 
 
 
@@ -12,15 +12,21 @@
 unsigned char prevKey;
 #include <stdio.h>
 // #include "engine/engine.cpp"
-using namespace core;
 
 class opengl
 {
   public:
+    static void (*loop)();
+    static void setLoop(void (*func)())
+    {
+      printf("Loop function set.\n");
+      loop = func;
+    }
+
     static void display(void)
     {
-      // printf("DisplayFunction: \n");
-      // loop();
+      if(loop)
+        loop();
 
       // // Reset key states if needed
       // Input::resetKeyStates();
@@ -29,24 +35,6 @@ class opengl
       glFlush();
       glutPostRedisplay();
 
-
-if (Input::getKeyDown(KEY_A)) {
-        // Handle A key pressed
-        printf("A HAS BEEN PRESSED \n");
-    }
-
-    if (Input::getKey(KEY_D)) {
-        // Handle D key held down
-        printf("D HAS BEEN PRESSED \n");
-    }
-
-    float horizontal = Input::getAxisRaw("Horizontal");
-    float vertical = Input::getAxisRaw("Vertical");
-
-    // // if (horizontal != 0)
-    // printf("%d", (int)horizontal);
-    // printf("\n");
-    // printf("%f", vertical);
     }
 
     static void reshape(int w, int h)
@@ -104,3 +92,5 @@ if (Input::getKeyDown(KEY_A)) {
     }
 };
 
+
+void (*opengl::loop)() = nullptr;

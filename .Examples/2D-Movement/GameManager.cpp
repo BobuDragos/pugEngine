@@ -1,8 +1,6 @@
 
 
 
-#include "../../engine/engine.cpp"
-using namespace core;
 
 class GameManager : public gameobject
 {

@@ -11,5 +11,15 @@ namespace core
       Transform transform;
       Renderer  renderer;
       // Collider  collider;
+      
+      virtual void start()
+      {
+
+      }
+
+      virtual void update()
+      {
+
+      }
   };
 }

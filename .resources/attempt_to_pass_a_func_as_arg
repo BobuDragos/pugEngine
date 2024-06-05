@@ -1,0 +1,36 @@
+i am trying to send a function to a static class through a function in cpp and i think i almost got it but i still get a segmentation error whenever the function gets called. If i surround it with if(loop) then it never gets called. my guess is that it is always nullptr and never actually gets the value that i want. how can i check that?
+
+class opengl
+{
+  public:
+    static void (*loop)();
+    static void setLoop(void (*func)())
+    {
+      loop = func;
+    }
+
+    static void display(void)
+    {
+      if(loop)
+        loop();
+    }
+};
+void (*opengl::loop)() = nullptr;
+
+
+
+
+
+void loop()
+{
+  printf("loop is called");
+}
+
+
+int main (int argc, char** argv)
+{
+  opengl::glutSetup(&argc, argv);
+  opengl::setLoop(loop);
+  return 0;
+}
+

@@ -1,7 +1,6 @@
 
 
-#include "../../engine/engine.cpp"
-using namespace core;
+
 
 class Player : public gameobject 
 {
@@ -16,16 +15,16 @@ class Player : public gameobject
       float horiz = Input::getAxisRaw("Horizontal");
       float vert  = Input::getAxisRaw("Vertical");
 
-      transform.translate(horiz, vert, 0);
+      transform.translate(Vector3(horiz, vert, 0));
     }
 
-    void onCollisionEnter(gameobject other) override
-    {
-      if(other.transform.name == "Star")
-      {
-        TextRenderer::display("You Win", Vector3::zero, 10, Color::red);
-      }
-    }
+    // void onCollisionEnter(gameobject other) override
+    // {
+    //   if(other.transform.name == "Star")
+    //   {
+    //     // TextRenderer::display("You Win", Vector3::zero, 10, Color::red);
+    //   }
+    // }
 };
 
 
